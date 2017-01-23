@@ -1,7 +1,5 @@
-# dump
-
 # version
-# Cleanflight/NAZE 1.14.1 Nov 11 2016 / 11:53:56 (51ae22d)
+# Cleanflight/NAZE 1.14.2 Dec 31 2016 / 02:12:34 (747971f)
 # dump master
 
 # mixer
@@ -33,10 +31,9 @@ feature -ONESHOT125
 feature -BLACKBOX
 feature -CHANNEL_FORWARDING
 feature -TRANSPONDER
-feature VBAT
+feature -OSD
 feature RX_SERIAL
 feature FAILSAFE
-feature BLACKBOX
 
 
 # map
@@ -170,9 +167,9 @@ set serialrx_provider = SPEK2048
 set sbus_inversion = ON
 set spektrum_sat_bind = 0
 set input_filtering_mode = OFF
-set min_throttle = 1150
-set max_throttle = 1850
-set min_command = 1000
+set min_throttle = 1185
+set max_throttle = 2000
+set min_command = 1100
 set motor_pwm_rate = 400
 set servo_center_pulse = 1500
 set servo_pwm_rate = 50
@@ -216,14 +213,14 @@ set align_board_roll = 0
 set align_board_pitch = 0
 set align_board_yaw = 0
 set small_angle = 25
-set max_angle_inclination = 500
+set max_angle_inclination = 700
 set pid_process_denom = 1
 set gyro_sync = 1
 set gyro_sample_hz = 1000
 set gyro_lpf = OFF
 set gyro_lowpass_level = NORMAL
 set gyro_lowpass_hz = 90
-set gyro_notch_hz = 0
+set gyro_notch_hz = 130
 set gyro_notch_cutoff_hz = 130
 set moron_threshold = 32
 set imu_dcm_kp = 2500
@@ -276,8 +273,8 @@ rxfail 17 h
 profile 0
 
 # aux
-aux 0 0 0 900 900
-aux 1 0 0 900 900
+aux 0 1 1 1700 2100
+aux 1 2 1 1300 1700
 aux 2 0 0 900 900
 aux 3 0 0 900 900
 aux 4 0 0 900 900
@@ -363,7 +360,7 @@ set baro_noise_lpf =  0.600
 set baro_cf_vel =  0.985
 set baro_cf_alt =  0.965
 set mag_declination = 0
-set pid_controller = MWREWRITE
+set pid_controller = LUX
 set p_pitch = 40
 set i_pitch = 30
 set d_pitch = 23
@@ -404,13 +401,13 @@ set gtune_average_cycles = 16
 # rateprofile
 rateprofile 0
 
-set rc_rate = 90
-set rc_expo = 65
-set rc_yaw_expo = 0
+set rc_rate = 100
+set rc_expo = 70
+set rc_yaw_expo = 10
 set thr_mid = 50
 set thr_expo = 0
-set roll_rate = 0
-set pitch_rate = 0
-set yaw_rate = 0
+set roll_rate = 40
+set pitch_rate = 40
+set yaw_rate = 50
 set tpa_rate = 0
 set tpa_breakpoint = 1500
